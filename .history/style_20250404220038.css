@@ -1,0 +1,666 @@
+/* === BIẾN MÀU SẮC CHỦ ĐẠO === */
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --secondary-color: #2ecc71;
+    --secondary-dark: #27ae60;
+    --danger-color: #e74c3c;
+    --danger-dark: #c0392b;
+    --warning-color: #f39c12;
+    --warning-dark: #d35400;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --gray-color: #bdc3c7;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* === THIẾT LẬP CHUNG === */
+* {
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+p, li, h1, h2, h3, h4, h5, h6 {
+    color: #262730;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.stApp {
+    background-color: #f8f9fa;
+}
+
+/* Giới hạn chiều rộng tối đa cho nội dung chính */
+.main .block-container {
+    max-width: 1400px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+}
+
+/* === HEADER === */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 2rem 3rem;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo-container {
+    flex: 0 0 100px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.title-container {
+    flex-grow: 1;
+    margin-left: 2rem;
+    
+    
+}
+
+.title-container h1 {
+    margin: 0;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+}
+
+.subtitle {
+    margin-top: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.9;
+    color: white;
+}
+
+/* === TABS === */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 3px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 60px;
+    white-space: pre-wrap;
+    background-color: #f1f3f5;
+    border-radius: 8px 8px 0 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    border-bottom: 2px solid transparent;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: white !important;
+    border-bottom: 3px solid var(--primary-color) !important;
+    font-weight: 600;
+}
+
+.stTabs [data-baseweb="tab-panel"] {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0 8px 8px 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    color: black;
+}
+
+.tab-description {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 0 5px 5px 0;
+    font-style: italic;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+/* === SECTION HEADERS === */
+.section-header {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 2rem 0 1.5rem 0;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* === BUTTONS === */
+.stButton > button {
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stButton > button:first-child {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.stButton > button:first-child:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.stButton > button:nth-child(2) {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.stButton > button:nth-child(2):hover {
+    background-color: var(--gray-color);
+    transform: translateY(-2px);
+}
+
+.stDownloadButton > button {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    padding: 0.7rem 1.5rem !important;
+    font-size: 1.1rem !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.stDownloadButton > button:hover {
+    background-color: var(--secondary-dark) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* === IMAGE CONTAINERS === */
+.image-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin: 10px 0 20px 0;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 1.5rem 0;
+}
+
+.more-images {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.upload-info {
+    background-color: rgba(52, 152, 219, 0.1);
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 15px 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+}
+
+/* === RESULT CARDS === */
+.result-card {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+}
+
+.result-card.normal {
+    background-color: rgba(46, 204, 113, 0.1);
+    border-left: 6px solid var(--secondary-color);
+}
+
+.result-card.tb {
+    background-color: rgba(231, 76, 60, 0.1);
+    border-left: 6px solid var(--danger-color);
+}
+
+.result-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+}
+
+.result-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.result-card.normal .result-text {
+    color: var(--secondary-dark);
+}
+
+.result-card.tb .result-text {
+    color: var(--danger-dark);
+}
+
+/* === INFO CARDS === */
+.info-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.info-card-header {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.info-card-content {
+    padding: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.info-value {
+    font-weight: 600;
+}
+
+/* === STATISTICS === */
+.stats-container {
+    display: flex;
+    gap: 25px;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #3498db;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card.normal {
+    border-top-color: var(--secondary-color);
+}
+
+.stat-card.tb {
+    border-top-color: var(--danger-color);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.stat-card.normal .stat-value {
+    color: var(--secondary-color);
+}
+
+.stat-card.tb .stat-value {
+    color: var(--danger-color);
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* === TABLE CONTAINER === */
+.table-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+/* Làm đẹp DataFrames của Streamlit */
+[data-testid="stDataFrame"] table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+[data-testid="stDataFrame"] th {
+    background-color: #f1f3f5;
+    padding: 12px 15px;
+    font-weight: 600;
+}
+
+[data-testid="stDataFrame"] td {
+    padding: 12px 15px;
+}
+
+[data-testid="stDataFrame"] tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* === PDF ITEMS === */
+.pdf-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.pdf-item:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.pdf-filename {
+    font-weight: 500;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+    color:#000000
+}
+
+.pdf-result {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.pdf-result.normal {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: var(--secondary-dark);
+}
+
+.pdf-result.tb {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: var(--danger-dark);
+}
+
+/* === CAM GRID === */
+.cam-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 1.5rem;
+}
+
+/* === INFO SECTION === */
+.info-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    
+}
+
+.info-section h2 {
+    color: var(--dark-color);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.8rem;
+    
+}
+
+.info-section h3 {
+    color: var(--dark-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    
+}
+
+.info-section p {
+    color: #444;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.info-section ol {
+    padding-left: 1.5rem;
+}
+
+.info-section li {
+    margin-bottom: 0.8rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.warning-box {
+    background-color: rgba(243, 156, 18, 0.1);
+    border-left: 4px solid var(--warning-color);
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.warning-box p {
+    margin: 0.5rem 0;
+}
+
+/* === TEAM SECTION === */
+.team-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.team-section h2 {
+    color: var(--dark-color);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.8rem;
+}
+
+/* === FOOTER === */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #e0e0e0;
+    color: #666;
+}
+
+.footer p {
+    margin: 0.4rem 0;
+    font-size: 1rem;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .logo-container {
+        margin-bottom: 1rem;
+    }
+    
+    .title-container {
+        margin-left: 0;
+        
+    }
+    
+    .title-container h1 {
+        font-size: 1.8rem;
+        
+        
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .pdf-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .pdf-filename {
+        max-width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-header {
+        font-size: 1.5rem;
+    }
+    
+    .result-card {
+        padding: 1.5rem;
+    }
+    
+    .result-text {
+        font-size: 1.5rem;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        height: 50px;
+        font-size: 0.9rem;
+        padding-left: 15px;
+        padding-right: 15px;
+        
+    }
+}
+
+/* === SPINNER === */
+.stSpinner > div {
+    border-color: var(--primary-color) !important;
+    border-bottom-color: transparent !important;
+}
+
+/* === PROGRESS BAR === */
+.stProgress > div > div {
+    background-color: var(--primary-color) !important;
+}
+
+/* === FILE UPLOADER === */
+.stFileUploader > div {
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stFileUploader > div:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+
